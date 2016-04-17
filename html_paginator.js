@@ -9,6 +9,7 @@ Basic HTML structure
 .html_paginator .html_paginator_prev
 
 **/
+(function ( $ ) {
 
 $.fn.htmlPaginator = function htmlPaginator(){
 
@@ -58,6 +59,10 @@ $.fn.htmlPaginator = function htmlPaginator(){
     $prev_triggers.on('click', prevPage);
 
     showRespective();
+
+    // For chaining
+    return this;
   });
 
 }
+}( jQuery ));
