@@ -10,7 +10,7 @@ Basic HTML structure
 
 **/
 
-function htmlPaginator(){
+$.fn.htmlPaginator = function htmlPaginator(){
 
   var nextClass = '.html_paginator_next';
   var prevClass = '.html_paginator_prev';
@@ -61,6 +61,3 @@ function htmlPaginator(){
   });
 
 }
-
-$(document).ready(htmlPaginator);
-$(document).on('page:load', htmlPaginator);
