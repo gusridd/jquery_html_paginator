@@ -18,11 +18,12 @@ Basic HTML structure
       console.log("htmlPaginator");
       var nextClass = '.html_paginator_next';
       var prevClass = '.html_paginator_prev';
+      var pageClass = '.html_paginator_page';
 
       var $paginator = $(this);
 
-      var $next_triggers = $paginator.find('.html_paginator_next');
-      var $prev_triggers = $paginator.find('.html_paginator_prev');
+      var $next_triggers = $paginator.find(nextClass);
+      var $prev_triggers = $paginator.find(prevClass);
 
       if($next_triggers.size() === 0){
         console.error("The following html_paginator element does not have an element with " + nextClass);
@@ -34,8 +35,7 @@ Basic HTML structure
         console.error($paginator);
       }
 
-      var page_divs = $paginator.find('.html_paginator_page');
-      console.log(page_divs);
+      var page_divs = $paginator.find(pageClass);
       var shown_index = 0;
       var total_pages = page_divs.size();
 
@@ -65,7 +65,6 @@ Basic HTML structure
 
       // For chaining
       return this;
-      });
-
-    }
+    });
+  }
 }( jQuery ));
