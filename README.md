@@ -32,3 +32,15 @@ $('.paginable').htmlPaginator();
 ```
 
 By default the plugin will hide all pages, but the first and use the onclick event on elements with classes 'html_paginator_prev' and 'html_paginator_next' to handle page scrolling.
+
+### Default values
+
+Default values can be overriden as follows:
+
+```js
+$('.paginable').htmlPaginator({
+  nextClass: '.html_paginator_next',
+  prevClass: '.html_paginator_prev',
+  pageClass: '.html_paginator_page',
+});
+```
