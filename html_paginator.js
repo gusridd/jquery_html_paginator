@@ -11,31 +11,34 @@ Basic HTML structure
 **/
 (function ( $ ) {
 
-  $.fn.htmlPaginator = function htmlPaginator(){
+  $.fn.htmlPaginator = function htmlPaginator(options){
+
+    var settings = $.extend({
+            // Default setting values.
+            nextClass: '.html_paginator_next',
+            prevClass: '.html_paginator_prev',
+            pageClass: '.html_paginator_page',
+        }, options );
+
 
     return this.each(function(){
 
-      console.log("htmlPaginator");
-      var nextClass = '.html_paginator_next';
-      var prevClass = '.html_paginator_prev';
-      var pageClass = '.html_paginator_page';
-
       var $paginator = $(this);
 
-      var $next_triggers = $paginator.find(nextClass);
-      var $prev_triggers = $paginator.find(prevClass);
+      var $next_triggers = $paginator.find(settings.nextClass);
+      var $prev_triggers = $paginator.find(settings.prevClass);
 
       if($next_triggers.size() === 0){
-        console.error("The following html_paginator element does not have an element with " + nextClass);
+        console.error("The following html_paginator element does not have an element with " + settings.nextClass);
         console.error($paginator);
       }
 
       if($prev_triggers.size() === 0){
-        console.error("The following html_paginator element does not have an element with " + nextClass);
+        console.error("The following html_paginator element does not have an element with " + settings.prevClass);
         console.error($paginator);
       }
 
-      var page_divs = $paginator.find(pageClass);
+      var page_divs = $paginator.find(settings.pageClass);
       var shown_index = 0;
       var total_pages = page_divs.size();
 
