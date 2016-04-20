@@ -39,8 +39,9 @@ Default values can be overriden as follows:
 
 ```js
 $('.paginable').htmlPaginator({
-  nextClass: '.html_paginator_next',
-  prevClass: '.html_paginator_prev',
-  pageClass: '.html_paginator_page',
+  nextClass:    '.html_paginator_next',
+  prevClass:    '.html_paginator_prev',
+  pageClass:    '.html_paginator_page',
+  counterClass: '.html_paginator_counter',
 });
 ```
