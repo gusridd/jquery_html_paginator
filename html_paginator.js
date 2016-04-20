@@ -15,9 +15,10 @@ Basic HTML structure
 
     var settings = $.extend({
             // Default setting values.
-            nextClass: '.html_paginator_next',
-            prevClass: '.html_paginator_prev',
-            pageClass: '.html_paginator_page',
+            nextClass:    '.html_paginator_next',
+            prevClass:    '.html_paginator_prev',
+            pageClass:    '.html_paginator_page',
+            counterClass: '.html_paginator_counter',
         }, options );
 
 
@@ -27,6 +28,7 @@ Basic HTML structure
 
       var $next_triggers = $paginator.find(settings.nextClass);
       var $prev_triggers = $paginator.find(settings.prevClass);
+      var $counters = $paginator.find(settings.counterClass);
 
       if($next_triggers.size() === 0){
         console.error("The following html_paginator element does not have an element with " + settings.nextClass);
@@ -47,6 +49,10 @@ Basic HTML structure
         page_divs.map(function(){ $(this).hide() });
         // Then show
         $(page_divs[shown_index]).show();
+        // Update counters
+        $counters.each(function(){
+          $(this).html(shown_index + 1);
+        });
       }
 
       function nextPage(e){
